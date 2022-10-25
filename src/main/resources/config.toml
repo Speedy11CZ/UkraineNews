@@ -1,0 +1,10 @@
+[collector]
+interval = 60000
+report-count = 10
+
+[pushover]
+token = ""
+user = ""
+
+[source.blesk]
+url = "https://www.blesk.cz/clanek/zpravy-valka-na-ukrajine/702030/online-invaze-zacala-rusove-utoci-na-ukrajinu-ze-vzduchu-i-na-zemi-mrtvych-jsou-uz-desitky.html"
