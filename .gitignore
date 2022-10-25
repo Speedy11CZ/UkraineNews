@@ -1,0 +1,14 @@
+### Intellij ###
+.idea/
+*.iws
+*/out/
+*.iml
+.idea_modules/
+
+### Gradle ###
+.gradle
+/build/
+/out/
+gradle-app.setting
+!gradle-wrapper.jar
+.gradletasknamecache
