@@ -15,6 +15,12 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
+/**
+ * Manager for collecting news from sources.
+ *
+ * @author Michal Spišak
+ * @since 1.0.0
+ */
 public class NewsManager extends TimerTask {
 
     private static final Logger LOGGER = LogManager.getLogger(NewsManager.class);
@@ -24,6 +30,11 @@ public class NewsManager extends TimerTask {
     private final NewsStorage newsStorage;
     private final int reportCount;
 
+    /**
+     * Creates a new news manager.
+     *
+     * @param unn Ukraine News Notifier instance
+     */
     public NewsManager(@NotNull UkraineNewsNotifier unn) {
         this.sources.add(new BleskNewsSource(unn.getConfig()));
         this.pushoverManager = unn.getPushoverManager();
@@ -34,6 +45,9 @@ public class NewsManager extends TimerTask {
         timer.scheduleAtFixedRate(this, 0L, unn.getConfig().getLong("collector.interval", 60000L));
     }
 
+    /**
+     * Collects news from sources.
+     */
     @Override
     public void run() {
         List<Report> reports = new ArrayList<>();
